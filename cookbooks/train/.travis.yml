@@ -1,0 +1,43 @@
+---
+sudo: required
+language: ruby
+cache: bundler
+
+# necessary for docker to work
+dist: trusty
+services:
+  - docker
+
+bundler_args: --without integration tools
+
+before_install:
+  - gem install bundler
+  - gem --version
+
+branches:
+  only:
+  - master
+
+matrix:
+  include:
+  - rvm: 2.2.7
+  - rvm: 2.3.7
+  - rvm: 2.4.4
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test"
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test:docker config=test-travis-debian.yml"
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test:docker config=test-travis-centos.yml"
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test:docker config=test-travis-oel.yml"
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test:docker config=test-travis-fedora.yml"
+  - rvm: 2.5.1
+    script: bundle exec rake $SUITE
+    env: SUITE="test:docker config=test-travis-ubuntu.yml"

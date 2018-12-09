@@ -1,0 +1,8 @@
+---
+lockfile_version: 1
+depends:
+- name: inspec-vmware
+  resolved_source:
+    path: D:/Users/snialt/chef-repo/cookbooks/inspec-vmware
+    sha256: 35353f0eb019ec647b15fb2aa65c9fc32a5b31f79077f7e373ae77fe7e3fb696
+  version_constraints: []

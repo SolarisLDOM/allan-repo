@@ -1,0 +1,10 @@
+name: inspec-vmware
+title: InSpec VMware
+maintainer: Chef Software Inc.
+copyright: Chef Software Inc.
+copyright_email: support@chef.io
+license: Apache-2.0
+summary: Allows users to audit VMware platforms
+version: 1.0.0
+#inspec_version: "~> 2.2.34"
+inspec_version: "~> 3.0.52"
